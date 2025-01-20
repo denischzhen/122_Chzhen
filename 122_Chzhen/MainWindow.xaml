@@ -1,7 +1,7 @@
 ﻿<Window x:Class="_122_Chzhen.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Практическая работа 1" Height="400" Width="600">
+        Title="Практическая работа 1" Height="400" Width="600" ResizeMode="CanResizeWithGrip">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -34,9 +34,11 @@
                 <Button x:Name="ClearButton" Content="Очистить" Width="100" Margin="10 0 0 0" Click="ClearButton_Click"/>
             </StackPanel>
 
-            <!-- Вывод результата -->
+            <!-- Вывод результата с возможностью прокрутки -->
             <Label Content="Результат:"/>
-            <TextBox x:Name="ResultBox" IsReadOnly="True" Height="30"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                <TextBox x:Name="ResultBox" IsReadOnly="True" Height="30" HorizontalScrollBarVisibility="Auto" />
+            </ScrollViewer>
         </StackPanel>
     </Grid>
 </Window>
